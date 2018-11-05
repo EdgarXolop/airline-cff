@@ -1,6 +1,6 @@
 # Airline
 
-Is a simple project to sell plane tickets.
+A fancy project to sell plane tickets.
 
 ## Requirements
 
