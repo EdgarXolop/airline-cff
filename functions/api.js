@@ -14,6 +14,7 @@ const flight = db.ref("vuelos")
 
 const AirplaneEndpoints = require("./endpoints/airplane")
 const AirportEndpoints = require("./endpoints/airport")
+const FlightEndpoints = require("./endpoints/flight")
 
 const app = express()
 
@@ -39,5 +40,6 @@ app.get("/info", (request, response) => {
 
 new AirplaneEndpoints(app,airplane)
 new AirportEndpoints(app,airport)
+new FlightEndpoints(app,flight)
 
 module.exports = app;
