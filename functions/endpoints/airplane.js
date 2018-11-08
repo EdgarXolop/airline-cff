@@ -9,7 +9,7 @@ function Airplane(app,airplane){
                 id:record.key,
                 nombre:request.body.nombre,
                 localidad:request.body.localidad,
-                Pais:request.body.pais
+                pais:request.body.pais
             }
         })
     })
