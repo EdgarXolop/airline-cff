@@ -27,7 +27,7 @@ function Airport(app,airport){
                         id: k,
                         nombre:value[k].nombre,
                         localidad:value[k].localidad,
-                        Pais:value[k].pais
+                        pais:value[k].pais
                     })
                 }
 
