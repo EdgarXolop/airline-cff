@@ -7,7 +7,9 @@ function Airport(app,airport){
         response.status(202).json({
             record:{
                 id:record.key,
-                plazas:request.body.plazas
+                nombre:request.body.nombre,
+                localidad:request.body.localidad,
+                pais:request.body.pais
             }
         })
     })
@@ -23,7 +25,9 @@ function Airport(app,airport){
                 for(let k in value){
                     data.push({
                         id: k,
-                        plazas: value[k].plazas
+                        nombre:value[k].nombre,
+                        localidad:value[k].localidad,
+                        Pais:value[k].pais
                     })
                 }
 

@@ -7,9 +7,8 @@ function Airplane(app,airplane){
         response.status(202).json({
             record:{
                 id:record.key,
-                nombre:request.body.nombre,
-                localidad:request.body.localidad,
-                pais:request.body.pais
+                nombre:request.body.plazas,
+                plazas:request.body.plazas
             }
         })
     })
@@ -25,9 +24,8 @@ function Airplane(app,airplane){
                 for(let k in value){
                     data.push({
                         id: k,
-                        nombre:value[k].nombre,
-                        localidad:value[k].localidad,
-                        Pais:value[k].pais
+                        nombre: value[k].nombre,
+                        plazas: value[k].plazas
                     })
                 }
 
