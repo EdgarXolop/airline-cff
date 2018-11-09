@@ -7,7 +7,7 @@ function Airplane(app,airplane){
         response.status(202).json({
             record:{
                 id:record.key,
-                nombre:request.body.plazas,
+                nombre:request.body.nombre,
                 plazas:request.body.plazas
             }
         })
