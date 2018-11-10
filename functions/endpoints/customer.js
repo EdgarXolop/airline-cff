@@ -3,6 +3,27 @@ function Customer(app,database,flight,tickets){
     
     app.get("/customer/buy", (request, response) => {
 
+
+        tickets.once("value", function(snpashot) {
+            var value = snpashot.val();
+
+            if(value){
+                let data = []
+
+                for(let k in value){
+                    data.push({
+                        id: k,
+                        customer: value[k].customer,
+                        flight: value[k].flight,
+                        plazas: value[k].plazas
+                    })
+                }
+
+                response.status(200).json({data})
+            }else{
+                response.status(404).json({data:[]})
+            }
+        })
     })
 
     app.get("/customer/:id", (request, response) => {
@@ -35,8 +56,8 @@ function Customer(app,database,flight,tickets){
                     f_record.update({avion: value.avion})
 
                     tickets .push({
-                        dni: request.body.user.dni,
-                        id_flight: request.body.buy.id_flight,
+                        customer: request.body.user,
+                        flight: request.body.flight,
                         plazas:request.body.buy.plazas
                     })
                     
