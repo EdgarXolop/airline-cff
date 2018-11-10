@@ -11,10 +11,12 @@ const db = admin.database();
 const airplane = db.ref("aviones")
 const airport = db.ref("aeropuertos")
 const flight = db.ref("vuelos")
+const tickets = db.ref("tickets")
 
 const AirplaneEndpoints = require("./endpoints/airplane")
 const AirportEndpoints = require("./endpoints/airport")
 const FlightEndpoints = require("./endpoints/flight")
+const CustomerEndpoints = require("./endpoints/customer")
 
 const app = express()
 
@@ -41,5 +43,6 @@ app.get("/info", (request, response) => {
 new AirplaneEndpoints(app,airplane)
 new AirportEndpoints(app,airport)
 new FlightEndpoints(app,flight)
+new CustomerEndpoints(app,db,flight,tickets)
 
 module.exports = app;
